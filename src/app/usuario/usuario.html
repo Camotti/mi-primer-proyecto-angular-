@@ -1,0 +1,13 @@
+<div style="padding: 20px; border: 1px solid #ccc;">
+  <h3>Registro de Usuarios (C# Backend)</h3>
+  <input [(ngModel)]="nombre" placeholder="Nombre de usuario" />
+  <button (click)="agregar()">Guardar</button>
+
+  <hr>
+
+  <ul>
+    <li *ngFor="let u of listUsuarios">
+      {{ u.id }} - {{ u.nombre }}
+    </li>
+  </ul>
+</div>
