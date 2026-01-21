@@ -1,13 +1,22 @@
-<div style="padding: 20px; border: 1px solid #ccc;">
-  <h3>Registro de Usuarios (C# Backend)</h3>
-  <input [(ngModel)]="nombre" placeholder="Nombre de usuario" />
-  <button (click)="agregar()">Guardar</button>
+<h2>Gestión de Usuarios</h2>
 
-  <hr>
+<input [(ngModel)]="nombre" name="nombre" placeholder="Nombre" />
 
-  <ul>
-    <li *ngFor="let u of listUsuarios">
-      {{ u.id }} - {{ u.nombre }}
-    </li>
-  </ul>
-</div>
+<button (click)="agregarUsuario()">Agregar</button>
+<button (click)="listarUsuarios()">Listar</button>
+
+<p [ngStyle]="{ 'color': listUsuarios.length === 0 ? 'red' : 'green' }">
+  Total usuarios: {{ listUsuarios.length }}
+</p>
+
+<hr>
+
+<ul *ngIf="listUsuarios.length > 0; else noData">
+  <li *ngFor="let u of listUsuarios; index as idx">
+    {{ idx + 1 }} - <strong>{{ u.nombre }}</strong>
+  </li>
+</ul>
+
+<ng-template #noData>
+  <p>No hay usuarios registrados en el sistema.</p>
+</ng-template>
