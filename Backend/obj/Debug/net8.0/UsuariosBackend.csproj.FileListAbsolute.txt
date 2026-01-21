@@ -1,11 +1,3 @@
-/home/Coder/Escritorio/mi-primer-proyecto/Backend/obj/Debug/net8.0/UsuariosBackend.csproj.AssemblyReference.cache
-/home/Coder/Escritorio/mi-primer-proyecto/Backend/obj/Debug/net8.0/UsuariosBackend.GeneratedMSBuildEditorConfig.editorconfig
-/home/Coder/Escritorio/mi-primer-proyecto/Backend/obj/Debug/net8.0/UsuariosBackend.AssemblyInfoInputs.cache
-/home/Coder/Escritorio/mi-primer-proyecto/Backend/obj/Debug/net8.0/UsuariosBackend.AssemblyInfo.cs
-/home/Coder/Escritorio/mi-primer-proyecto/Backend/obj/Debug/net8.0/UsuariosBackend.csproj.CoreCompileInputs.cache
-/home/Coder/Escritorio/mi-primer-proyecto/Backend/obj/Debug/net8.0/UsuariosBackend.MvcApplicationPartsAssemblyInfo.cs
-/home/Coder/Escritorio/mi-primer-proyecto/Backend/obj/Debug/net8.0/UsuariosBackend.MvcApplicationPartsAssemblyInfo.cache
-/home/Coder/Escritorio/mi-primer-proyecto/Backend/obj/Debug/net8.0/UsuariosBackend.sourcelink.json
 /home/Coder/Escritorio/mi-primer-proyecto/Backend/bin/Debug/net8.0/appsettings.Development.json
 /home/Coder/Escritorio/mi-primer-proyecto/Backend/bin/Debug/net8.0/appsettings.json
 /home/Coder/Escritorio/mi-primer-proyecto/Backend/bin/Debug/net8.0/UsuariosBackend
@@ -18,6 +10,14 @@
 /home/Coder/Escritorio/mi-primer-proyecto/Backend/bin/Debug/net8.0/Swashbuckle.AspNetCore.Swagger.dll
 /home/Coder/Escritorio/mi-primer-proyecto/Backend/bin/Debug/net8.0/Swashbuckle.AspNetCore.SwaggerGen.dll
 /home/Coder/Escritorio/mi-primer-proyecto/Backend/bin/Debug/net8.0/Swashbuckle.AspNetCore.SwaggerUI.dll
+/home/Coder/Escritorio/mi-primer-proyecto/Backend/obj/Debug/net8.0/UsuariosBackend.csproj.AssemblyReference.cache
+/home/Coder/Escritorio/mi-primer-proyecto/Backend/obj/Debug/net8.0/UsuariosBackend.GeneratedMSBuildEditorConfig.editorconfig
+/home/Coder/Escritorio/mi-primer-proyecto/Backend/obj/Debug/net8.0/UsuariosBackend.AssemblyInfoInputs.cache
+/home/Coder/Escritorio/mi-primer-proyecto/Backend/obj/Debug/net8.0/UsuariosBackend.AssemblyInfo.cs
+/home/Coder/Escritorio/mi-primer-proyecto/Backend/obj/Debug/net8.0/UsuariosBackend.csproj.CoreCompileInputs.cache
+/home/Coder/Escritorio/mi-primer-proyecto/Backend/obj/Debug/net8.0/UsuariosBackend.MvcApplicationPartsAssemblyInfo.cs
+/home/Coder/Escritorio/mi-primer-proyecto/Backend/obj/Debug/net8.0/UsuariosBackend.MvcApplicationPartsAssemblyInfo.cache
+/home/Coder/Escritorio/mi-primer-proyecto/Backend/obj/Debug/net8.0/UsuariosBackend.sourcelink.json
 /home/Coder/Escritorio/mi-primer-proyecto/Backend/obj/Debug/net8.0/staticwebassets.build.json
 /home/Coder/Escritorio/mi-primer-proyecto/Backend/obj/Debug/net8.0/staticwebassets.development.json
 /home/Coder/Escritorio/mi-primer-proyecto/Backend/obj/Debug/net8.0/staticwebassets/msbuild.UsuariosBackend.Microsoft.AspNetCore.StaticWebAssets.props

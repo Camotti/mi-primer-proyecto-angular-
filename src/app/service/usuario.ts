@@ -15,7 +15,7 @@ export interface Usuario {
 export class UsuarioService {
   // Ajusta esta URL a la de tu controlador de C# (ej: https://localhost:7001/api/usuario)
 
-  private readonly apiUrl= 'api/usuario';
+  private readonly apiUrl= 'http://localhost:5250/api/usuario';
 
   constructor(private http: HttpClient) {}
 
