@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace Backend.Controllers // <--- Asegúrate que esto coincida con tu carpeta
+namespace Backend.Controllers 
 {
     [ApiController]
     [Route("api/usuario")]
@@ -19,6 +19,18 @@ namespace Backend.Controllers // <--- Asegúrate que esto coincida con tu carpet
             _usuarios.Add(nuevo);
             return Ok(nuevo);
         }
+
+        [HttpDelete("{id}")]
+        public IActionResult Delete(int id)
+        {
+            var usuario = _usuarios.FirstOrDefault(u => u.Id == id);
+            if (usuario == null) return NotFound();
+            
+            _usuarios.Remove(usuario);
+            return NoContent(); // respuesta exitosa
+        }
+
+
     }
 
     public class Usuario

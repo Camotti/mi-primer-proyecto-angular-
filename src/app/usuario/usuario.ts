@@ -34,4 +34,14 @@ export class UsuarioComponent implements OnInit {
       this.listarUsuarios(); // Refresca la lista
     });
   }
+
+  eliminarUsuario(id:number) {
+    if (confirm("Estas seuro de querer eliminar este usuario?")) {
+      this.svc.delete(id).subscribe({
+        next: ()=> this.listarUsuarios(), // refresca la lista tras borrar un usuario
+        error: (e) => console.error("no se puedo eliminar el usuario:",e)
+      })
+    }
+  }
+
 }

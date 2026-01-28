@@ -28,4 +28,16 @@ export class UsuarioService {
   create(usuario: Usuario): Observable<Usuario> {
     return this.http.post<Usuario>(this.apiUrl, usuario);
   }
+
+
+  eliminarUsuario(id: number): void {
+    //confirmacion antes de eliminar 
+    if (confirm("desea eliminar este usuario ?")) {
+      this.svc.delete(id).subscribe({
+        next: 
+      })
+    }
+  }
+
+
 }
