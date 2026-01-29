@@ -1,24 +1,28 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common'; 
-import { FormsModule } from '@angular/forms';     
+import { FormsModule, ReactiveFormsModule, FormBuilder, FormGroup, Validators, AbstractControl, ValidationErrors, ValidatorFn } from '@angular/forms';     
 import { UsuarioService, Usuario } from '../service/usuario'; 
 import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-usuario',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule],
   templateUrl: './usuario.html',
   styleUrls: ['./usuario.css']
 })
 export class UsuarioComponent implements OnInit {
-  nombre: string = '';
+  form!: FormGroup; 
   listUsuarios: Usuario[] = [];
-
   errorMensaje: string | null = null;
   cargando: boolean = false;
 
-  constructor(private svc: UsuarioService) {}
+  constructor(private svc: UsuarioService, private fb: FormBuilder, private cdr: ChangeDetectorRef) {
+    this.form = this.fb.group({
+      // Agregamos el validador personalizado aquí 👇
+      nombre: ["", [Validators.required, Validators.minLength(3), noPalabrasProhibidas(['admin', 'root', 'spam'])]]
+    });
+  }
 
   ngOnInit(): void {
     this.listarUsuarios();
@@ -26,61 +30,71 @@ export class UsuarioComponent implements OnInit {
 
   listarUsuarios(): void {
     this.svc.getAll().subscribe({
-      next: (data: Usuario[]) => { //  Tipamos 'data' como un arreglo de Usuarios
+      next: (data: Usuario[]) => {
         this.listUsuarios = data;
         this.cargando = false;
+        this.cdr.detectChanges();
       },
       error: (err: HttpErrorResponse) => { 
         this.cargando = false;
-        if (err.status === 0) {
-          this.errorMensaje= "No hay conexion con el servidor."
-        } else {
-          this.errorMensaje= `Error del servidor (${err.status}): ${err.message}`;
-        }
+        this.errorMensaje = err.status === 0 ? "No hay conexion con el servidor." : `Error: ${err.status}`;
       }
     });
   }
 
   agregarUsuario(): void {
-  if (!this.nombre.trim()) return;
+    // 1. Validamos el formulario reactivo
+    if (this.form.invalid) return;
 
-  // Validación de duplicados (Extra de buena práctica)
-  const existe = this.listUsuarios.some(u => u.nombre.toLowerCase() === this.nombre.toLowerCase());
-  if (existe) {
-    alert("Este nombre ya existe.");
-    return;
-  }
+    // 2. Extraemos el valor del formulario { nombre: '...' }
+    const nuevoUsuario = this.form.value;
 
-  this.cargando = true; // Feedback visual
-  this.svc.create({ nombre: this.nombre }).subscribe({
-    next: () => {
-      this.nombre = ''; 
-      this.listarUsuarios(); 
-    },
-    error: (err: HttpErrorResponse) => { // 👈 Tipado correcto
-      this.errorMensaje = "Error al guardar el usuario.";
-      this.cargando = false;
-      console.error('Detalle técnico:', err.message);
+    // 3. Validación de duplicados usando el valor del formulario
+    const existe = this.listUsuarios.some(u => u.nombre.toLowerCase() === nuevoUsuario.nombre.toLowerCase());
+    if (existe) {
+      alert("Este nombre ya existe.");
+      return;
     }
-  });
-}
 
-  eliminarUsuario(id: number | undefined): void {
-  if (id === undefined) return; 
-
-  if (confirm("¿Estás seguro que desea eliminar este usuario?")) {
-    this.cargando = true; // Bloqueamos acciones mientras borra
-    this.svc.delete(id).subscribe({
+    this.cargando = true;
+    this.svc.create(nuevoUsuario).subscribe({
       next: () => {
-        console.log('Eliminado con éxito');
-        this.listarUsuarios();
+        this.form.reset(); // 4. Limpiamos el formulario
+        this.listarUsuarios(); 
       },
-      error: (err: HttpErrorResponse) => { // 👈 Tipado correcto
-        this.errorMensaje = "No se pudo eliminar el usuario.";
+      error: (err: HttpErrorResponse) => {
+        this.errorMensaje = "Error al guardar el usuario.";
         this.cargando = false;
-        console.error("Error al eliminar:", err.statusText);
       }
     });
   }
-}
+
+  eliminarUsuario(id: number | undefined): void {
+    if (id === undefined) return; 
+    if (confirm("¿Estás seguro que desea eliminar este usuario?")) {
+      this.cargando = true;
+      this.svc.delete(id).subscribe({
+        next: () => this.listarUsuarios(),
+        error: (err: HttpErrorResponse) => {
+          this.errorMensaje = "No se pudo eliminar.";
+          this.cargando = false;
+        }
+      });
+    }
+  }
+} // <--- AQUÍ TERMINA LA CLASE
+
+// --- ETAPA 4: VALIDADOR PERSONALIZADO ---
+// aquí afuera para que sea una función pura
+export function noPalabrasProhibidas(prohibidas: string[]): ValidatorFn {
+  return (control: AbstractControl): ValidationErrors | null => {
+    // Si el campo está vacío, no validamos (eso lo hace el 'required')
+    if (!control.value) return null;
+
+    const valor = control.value.trim().toLowerCase();
+    // Buscamos si la palabra prohibida es EXACTAMENTE igual al valor
+    const esProhibida = prohibidas.some(p => valor === p.toLowerCase());
+    
+    return esProhibida ? { 'palabraProhibida': true } : null;
+  };
 }

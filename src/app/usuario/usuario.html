@@ -1,30 +1,61 @@
 <h2>Gestión de Usuarios</h2>
 
-<input [(ngModel)]="nombre" 
-       (keyup.enter)="agregarUsuario()" 
-       name="nombre" 
-       placeholder="Nombre" />
+<div *ngIf="errorMensaje" style="color: white; background-color: darkred; padding: 10px; margin-bottom: 10px; border-radius: 5px;">
+  {{ errorMensaje }}
+</div>
 
-<button (click)="agregarUsuario()" [disabled]="!nombre.trim() || cargando">Agregar</button>
-<button (click)="listarUsuarios()">Listar</button>
+<form [formGroup]="form" (ngSubmit)="agregarUsuario()">
+  
+  <div style="margin-bottom: 10px;">
+    <label for="nombre" style="display: block; margin-bottom: 5px;">Nombre del Usuario:</label>
+    <input 
+      id="nombre"
+      formControlName="nombre" 
+      placeholder="Ej: Camilo"
+      [style.border-color]="form.get('nombre')?.invalid && form.get('nombre')?.touched ? 'red' : ''"
+    />
 
-<p [ngStyle]="{ 'color': listUsuarios.length === 0 ? 'red' : 'green' }">
-  Total usuarios: {{ listUsuarios.length }}
-</p>
+    <div *ngIf="form.get('nombre')?.invalid && form.get('nombre')?.touched" style="color: orange; font-size: 0.85em; margin-top: 5px;">
+      <small *ngIf="form.get('nombre')?.hasError('required')" style="display: block;">⚠️ El nombre es obligatorio.</small>
+      <small *ngIf="form.get('nombre')?.hasError('minlength')" style="display: block;">⚠️ Mínimo 3 caracteres.</small>
+      <small *ngIf="form.get('nombre')?.hasError('palabraProhibida')" style="color: red; display: block; font-weight: bold;">
+        🚫 Nombre no permitido (admin/root/spam).
+      </small>
+    </div>
+  </div>
+
+  <button type="submit" [disabled]="form.invalid || cargando">
+    {{ cargando ? 'Procesando...' : 'Agregar Usuario' }}
+  </button>
+  
+  <button type="button" (click)="listarUsuarios()" style="margin-left: 10px;">
+    Actualizar Lista
+  </button>
+</form>
 
 <hr>
 
-<ul *ngIf="listUsuarios.length > 0; else noData">
-  <li *ngFor="let u of listUsuarios; index as idx">
-    {{ idx + 1 }} - <strong>{{ u.nombre }}</strong>
+<p [ngStyle]="{ 'color': listUsuarios.length === 0 ? 'red' : 'green' }">
+  <strong>Total en sistema:</strong> {{ listUsuarios.length }} usuarios.
+</p>
+
+<ul *ngIf="listUsuarios.length > 0; else noData" style="list-style: none; padding: 0;">
+  <li *ngFor="let u of listUsuarios; index as i" 
+      style="padding: 10px; border-bottom: 1px solid #eee; display: flex; align-items: center; justify-content: space-between; max-width: 400px;">
     
-    <button (click)="eliminarUsuario(u.id!)" *ngIf="u.id" 
-            style="margin-left: 15px; color: white; background-color: darkred; border: none; cursor: pointer;">
+    <span>
+      <span style="color: #888;">#{{ i + 1 }}</span> 
+      <strong style="margin-left: 10px;">{{ u.nombre }}</strong>
+    </span>
+
+    <button type="button" 
+            (click)="eliminarUsuario(u.id!)" 
+            style="background-color: #d32f2f; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">
       Eliminar
     </button>
   </li>
 </ul>
 
 <ng-template #noData>
-  <p>No hay usuarios registrados en el sistema.</p>
+  <p style="font-style: italic; color: #666;">No hay usuarios registrados o la lista no ha sido cargada.</p>
 </ng-template>
