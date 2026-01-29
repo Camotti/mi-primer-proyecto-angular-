@@ -1,8 +1,11 @@
 <h2>Gestión de Usuarios</h2>
 
-<input [(ngModel)]="nombre" name="nombre" placeholder="Nombre" />
+<input [(ngModel)]="nombre" 
+       (keyup.enter)="agregarUsuario()" 
+       name="nombre" 
+       placeholder="Nombre" />
 
-<button (click)="agregarUsuario()">Agregar</button>
+<button (click)="agregarUsuario()" [disabled]="!nombre.trim() || cargando">Agregar</button>
 <button (click)="listarUsuarios()">Listar</button>
 
 <p [ngStyle]="{ 'color': listUsuarios.length === 0 ? 'red' : 'green' }">

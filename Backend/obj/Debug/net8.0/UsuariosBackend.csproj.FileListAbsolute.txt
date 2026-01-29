@@ -1,34 +1,36 @@
-/home/Coder/Escritorio/mi-primer-proyecto/Backend/bin/Debug/net8.0/appsettings.Development.json
-/home/Coder/Escritorio/mi-primer-proyecto/Backend/bin/Debug/net8.0/appsettings.json
-/home/Coder/Escritorio/mi-primer-proyecto/Backend/bin/Debug/net8.0/UsuariosBackend
-/home/Coder/Escritorio/mi-primer-proyecto/Backend/bin/Debug/net8.0/UsuariosBackend.deps.json
-/home/Coder/Escritorio/mi-primer-proyecto/Backend/bin/Debug/net8.0/UsuariosBackend.runtimeconfig.json
-/home/Coder/Escritorio/mi-primer-proyecto/Backend/bin/Debug/net8.0/UsuariosBackend.dll
-/home/Coder/Escritorio/mi-primer-proyecto/Backend/bin/Debug/net8.0/UsuariosBackend.pdb
-/home/Coder/Escritorio/mi-primer-proyecto/Backend/bin/Debug/net8.0/Microsoft.AspNetCore.OpenApi.dll
-/home/Coder/Escritorio/mi-primer-proyecto/Backend/bin/Debug/net8.0/Microsoft.OpenApi.dll
-/home/Coder/Escritorio/mi-primer-proyecto/Backend/bin/Debug/net8.0/Swashbuckle.AspNetCore.Swagger.dll
-/home/Coder/Escritorio/mi-primer-proyecto/Backend/bin/Debug/net8.0/Swashbuckle.AspNetCore.SwaggerGen.dll
-/home/Coder/Escritorio/mi-primer-proyecto/Backend/bin/Debug/net8.0/Swashbuckle.AspNetCore.SwaggerUI.dll
-/home/Coder/Escritorio/mi-primer-proyecto/Backend/obj/Debug/net8.0/UsuariosBackend.csproj.AssemblyReference.cache
-/home/Coder/Escritorio/mi-primer-proyecto/Backend/obj/Debug/net8.0/UsuariosBackend.GeneratedMSBuildEditorConfig.editorconfig
-/home/Coder/Escritorio/mi-primer-proyecto/Backend/obj/Debug/net8.0/UsuariosBackend.AssemblyInfoInputs.cache
-/home/Coder/Escritorio/mi-primer-proyecto/Backend/obj/Debug/net8.0/UsuariosBackend.AssemblyInfo.cs
-/home/Coder/Escritorio/mi-primer-proyecto/Backend/obj/Debug/net8.0/UsuariosBackend.csproj.CoreCompileInputs.cache
-/home/Coder/Escritorio/mi-primer-proyecto/Backend/obj/Debug/net8.0/UsuariosBackend.MvcApplicationPartsAssemblyInfo.cs
-/home/Coder/Escritorio/mi-primer-proyecto/Backend/obj/Debug/net8.0/UsuariosBackend.MvcApplicationPartsAssemblyInfo.cache
-/home/Coder/Escritorio/mi-primer-proyecto/Backend/obj/Debug/net8.0/UsuariosBackend.sourcelink.json
-/home/Coder/Escritorio/mi-primer-proyecto/Backend/obj/Debug/net8.0/staticwebassets.build.json
-/home/Coder/Escritorio/mi-primer-proyecto/Backend/obj/Debug/net8.0/staticwebassets.development.json
-/home/Coder/Escritorio/mi-primer-proyecto/Backend/obj/Debug/net8.0/staticwebassets/msbuild.UsuariosBackend.Microsoft.AspNetCore.StaticWebAssets.props
-/home/Coder/Escritorio/mi-primer-proyecto/Backend/obj/Debug/net8.0/staticwebassets/msbuild.build.UsuariosBackend.props
-/home/Coder/Escritorio/mi-primer-proyecto/Backend/obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.UsuariosBackend.props
-/home/Coder/Escritorio/mi-primer-proyecto/Backend/obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.UsuariosBackend.props
-/home/Coder/Escritorio/mi-primer-proyecto/Backend/obj/Debug/net8.0/staticwebassets.pack.json
-/home/Coder/Escritorio/mi-primer-proyecto/Backend/obj/Debug/net8.0/scopedcss/bundle/UsuariosBackend.styles.css
-/home/Coder/Escritorio/mi-primer-proyecto/Backend/obj/Debug/net8.0/UsuariosBackend.csproj.CopyComplete
-/home/Coder/Escritorio/mi-primer-proyecto/Backend/obj/Debug/net8.0/UsuariosBackend.dll
-/home/Coder/Escritorio/mi-primer-proyecto/Backend/obj/Debug/net8.0/refint/UsuariosBackend.dll
-/home/Coder/Escritorio/mi-primer-proyecto/Backend/obj/Debug/net8.0/UsuariosBackend.pdb
-/home/Coder/Escritorio/mi-primer-proyecto/Backend/obj/Debug/net8.0/UsuariosBackend.genruntimeconfig.cache
-/home/Coder/Escritorio/mi-primer-proyecto/Backend/obj/Debug/net8.0/ref/UsuariosBackend.dll
+C:\Users\ASUS X512F\mi-primer-proyecto-angular-\Backend\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\ASUS X512F\mi-primer-proyecto-angular-\Backend\bin\Debug\net8.0\appsettings.json
+C:\Users\ASUS X512F\mi-primer-proyecto-angular-\Backend\bin\Debug\net8.0\UsuariosBackend.staticwebassets.endpoints.json
+C:\Users\ASUS X512F\mi-primer-proyecto-angular-\Backend\bin\Debug\net8.0\UsuariosBackend.deps.json
+C:\Users\ASUS X512F\mi-primer-proyecto-angular-\Backend\bin\Debug\net8.0\UsuariosBackend.runtimeconfig.json
+C:\Users\ASUS X512F\mi-primer-proyecto-angular-\Backend\bin\Debug\net8.0\UsuariosBackend.dll
+C:\Users\ASUS X512F\mi-primer-proyecto-angular-\Backend\bin\Debug\net8.0\UsuariosBackend.pdb
+C:\Users\ASUS X512F\mi-primer-proyecto-angular-\Backend\bin\Debug\net8.0\Microsoft.AspNetCore.OpenApi.dll
+C:\Users\ASUS X512F\mi-primer-proyecto-angular-\Backend\bin\Debug\net8.0\Microsoft.OpenApi.dll
+C:\Users\ASUS X512F\mi-primer-proyecto-angular-\Backend\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\ASUS X512F\mi-primer-proyecto-angular-\Backend\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\ASUS X512F\mi-primer-proyecto-angular-\Backend\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\ASUS X512F\mi-primer-proyecto-angular-\Backend\obj\Debug\net8.0\UsuariosBackend.csproj.AssemblyReference.cache
+C:\Users\ASUS X512F\mi-primer-proyecto-angular-\Backend\obj\Debug\net8.0\rpswa.dswa.cache.json
+C:\Users\ASUS X512F\mi-primer-proyecto-angular-\Backend\obj\Debug\net8.0\UsuariosBackend.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ASUS X512F\mi-primer-proyecto-angular-\Backend\obj\Debug\net8.0\UsuariosBackend.AssemblyInfoInputs.cache
+C:\Users\ASUS X512F\mi-primer-proyecto-angular-\Backend\obj\Debug\net8.0\UsuariosBackend.AssemblyInfo.cs
+C:\Users\ASUS X512F\mi-primer-proyecto-angular-\Backend\obj\Debug\net8.0\UsuariosBackend.csproj.CoreCompileInputs.cache
+C:\Users\ASUS X512F\mi-primer-proyecto-angular-\Backend\obj\Debug\net8.0\UsuariosBackend.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\ASUS X512F\mi-primer-proyecto-angular-\Backend\obj\Debug\net8.0\UsuariosBackend.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\ASUS X512F\mi-primer-proyecto-angular-\Backend\obj\Debug\net8.0\UsuariosBackend.sourcelink.json
+C:\Users\ASUS X512F\mi-primer-proyecto-angular-\Backend\obj\Debug\net8.0\rjimswa.dswa.cache.json
+C:\Users\ASUS X512F\mi-primer-proyecto-angular-\Backend\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
+C:\Users\ASUS X512F\mi-primer-proyecto-angular-\Backend\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
+C:\Users\ASUS X512F\mi-primer-proyecto-angular-\Backend\obj\Debug\net8.0\scopedcss\bundle\UsuariosBackend.styles.css
+C:\Users\ASUS X512F\mi-primer-proyecto-angular-\Backend\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\ASUS X512F\mi-primer-proyecto-angular-\Backend\obj\Debug\net8.0\staticwebassets.build.json.cache
+C:\Users\ASUS X512F\mi-primer-proyecto-angular-\Backend\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\ASUS X512F\mi-primer-proyecto-angular-\Backend\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\Users\ASUS X512F\mi-primer-proyecto-angular-\Backend\obj\Debug\net8.0\swae.build.ex.cache
+C:\Users\ASUS X512F\mi-primer-proyecto-angular-\Backend\obj\Debug\net8.0\Usuarios.B30E8770.Up2Date
+C:\Users\ASUS X512F\mi-primer-proyecto-angular-\Backend\obj\Debug\net8.0\UsuariosBackend.dll
+C:\Users\ASUS X512F\mi-primer-proyecto-angular-\Backend\obj\Debug\net8.0\refint\UsuariosBackend.dll
+C:\Users\ASUS X512F\mi-primer-proyecto-angular-\Backend\obj\Debug\net8.0\UsuariosBackend.pdb
+C:\Users\ASUS X512F\mi-primer-proyecto-angular-\Backend\obj\Debug\net8.0\UsuariosBackend.genruntimeconfig.cache
+C:\Users\ASUS X512F\mi-primer-proyecto-angular-\Backend\obj\Debug\net8.0\ref\UsuariosBackend.dll
