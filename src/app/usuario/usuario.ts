@@ -42,28 +42,45 @@ export class UsuarioComponent implements OnInit {
   }
 
   agregarUsuario(): void {
-    if (!this.nombre.trim()) return;
-    // 1. Enviamos la petición
-    this.svc.create({ nombre: this.nombre }).subscribe({
-      next: () => {
-        // 2. SOLO cuando el servidor confirme (next), limpiamos y refrescamos
-        this.nombre = ''; 
-        this.listarUsuarios(); 
-      },
-      error: (err: any) => console.error('Error al agregar:', err)
-    });
+  if (!this.nombre.trim()) return;
+
+  // Validación de duplicados (Extra de buena práctica)
+  const existe = this.listUsuarios.some(u => u.nombre.toLowerCase() === this.nombre.toLowerCase());
+  if (existe) {
+    alert("Este nombre ya existe.");
+    return;
   }
 
-  eliminarUsuario(id: number | undefined): void {
-    if (id === undefined) return; // Seguridad
-    if (confirm("¿Estás seguro que desea eliminar este usuario?")) {
-      this.svc.delete(id).subscribe({
-        next: () => {
-          console.log('Eliminado con éxito');
-          this.listarUsuarios();
-        },
-        error: (e: any) => console.error("Error al eliminar:", e)
-      });
+  this.cargando = true; // Feedback visual
+  this.svc.create({ nombre: this.nombre }).subscribe({
+    next: () => {
+      this.nombre = ''; 
+      this.listarUsuarios(); 
+    },
+    error: (err: HttpErrorResponse) => { // 👈 Tipado correcto
+      this.errorMensaje = "Error al guardar el usuario.";
+      this.cargando = false;
+      console.error('Detalle técnico:', err.message);
     }
+  });
+}
+
+  eliminarUsuario(id: number | undefined): void {
+  if (id === undefined) return; 
+
+  if (confirm("¿Estás seguro que desea eliminar este usuario?")) {
+    this.cargando = true; // Bloqueamos acciones mientras borra
+    this.svc.delete(id).subscribe({
+      next: () => {
+        console.log('Eliminado con éxito');
+        this.listarUsuarios();
+      },
+      error: (err: HttpErrorResponse) => { // 👈 Tipado correcto
+        this.errorMensaje = "No se pudo eliminar el usuario.";
+        this.cargando = false;
+        console.error("Error al eliminar:", err.statusText);
+      }
+    });
   }
+}
 }
