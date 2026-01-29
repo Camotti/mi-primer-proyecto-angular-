@@ -24,6 +24,16 @@
     </div>
   </div>
 
+  <div style="margin-bottom: 15px;">
+    <label for="descripcion" style="display: block; margin-bottom: 5px;">Descripción o Rol:</label>
+    <input 
+      id="descripcion"
+      formControlName="descripcion" 
+      placeholder="Ej: Desarrollador, Periodista..."
+      style="width: 100%; max-width: 300px; padding: 5px;"
+    />
+  </div>
+
   <button type="submit" [disabled]="form.invalid || cargando">
     {{ cargando ? 'Procesando...' : 'Agregar Usuario' }}
   </button>
@@ -41,11 +51,15 @@
 
 <ul *ngIf="listUsuarios.length > 0; else noData" style="list-style: none; padding: 0;">
   <li *ngFor="let u of listUsuarios; index as i" 
-      style="padding: 10px; border-bottom: 1px solid #eee; display: flex; align-items: center; justify-content: space-between; max-width: 400px;">
+      style="padding: 10px; border-bottom: 1px solid #eee; display: flex; align-items: center; justify-content: space-between; max-width: 450px;">
     
     <span>
       <span style="color: #888;">#{{ i + 1 }}</span> 
       <strong style="margin-left: 10px;">{{ u.nombre }}</strong>
+      
+      <small style="display: block; margin-left: 35px; color: #666; font-style: italic;">
+        {{ u.descripcion || 'Sin descripción' }}
+      </small>
     </span>
 
     <button type="button" 

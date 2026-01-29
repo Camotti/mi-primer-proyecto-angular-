@@ -20,7 +20,8 @@ export class UsuarioComponent implements OnInit {
   constructor(private svc: UsuarioService, private fb: FormBuilder, private cdr: ChangeDetectorRef) {
     this.form = this.fb.group({
       // Agregamos el validador personalizado aquí 👇
-      nombre: ["", [Validators.required, Validators.minLength(3), noPalabrasProhibidas(['admin', 'root', 'spam'])]]
+      nombre: ["", [Validators.required, Validators.minLength(3), noPalabrasProhibidas(['admin', 'root', 'spam'])]],
+      description: [""]
     });
   }
 
